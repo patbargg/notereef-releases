@@ -10,106 +10,612 @@
       name="description"
       content="Notereef keeps your notes, calendar, tasks and finances in one app, alone or with others. For Windows and Android."
     />
+    <meta name="theme-color" content="#050a17" />
     <link rel="icon" href="icon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="style.css" />
     <script src="site.js"></script>
   </head>
   <body>
-    <div class="wrap">
-      <header class="top">
-        <img src="icon.svg" alt="" />
-        <a class="wordmark" href="index.html" data-page="index.html">Notereef</a>
+    <!-- The signs used on this page, drawn once. -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="i-page" viewBox="0 0 24 24">
+        <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
+        <path d="M14 3v5h5M9 13h6M9 17h4" />
+      </symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24">
+        <rect x="3.5" y="5" width="17" height="15.5" rx="2.5" />
+        <path d="M3.5 10h17M8 3v4M16 3v4" />
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" /></symbol>
+      <symbol id="i-wallet" viewBox="0 0 24 24">
+        <path d="M4 8V7.5A2.5 2.5 0 0 1 6.5 5H17a2 2 0 0 1 2 2v1" />
+        <rect x="4" y="8" width="16.5" height="11.5" rx="2.5" />
+        <path d="M15.5 13.75h1.5" />
+      </symbol>
+      <symbol id="i-pen" viewBox="0 0 24 24">
+        <path d="M4 20l1-4L16.5 4.5a2.1 2.1 0 0 1 3 3L8 19z" />
+        <path d="M14.5 6.5l3 3" />
+      </symbol>
+      <symbol id="i-users" viewBox="0 0 24 24">
+        <circle cx="9" cy="8.5" r="3.25" />
+        <path d="M3 19.5c.6-3 3-4.75 6-4.75s5.4 1.75 6 4.75" />
+        <path d="M16 5.6a3.25 3.25 0 0 1 0 5.8M18 14.9c1.7.6 2.7 2.1 3 4.6" />
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24">
+        <path d="M12 3l7.5 3v5.5c0 4.5-3 8-7.5 9.5-4.5-1.5-7.5-5-7.5-9.5V6z" />
+        <path d="M9 12l2.2 2.2L15.2 10" />
+      </symbol>
+      <symbol id="i-device" viewBox="0 0 24 24">
+        <rect x="6.5" y="2.5" width="11" height="19" rx="2.75" />
+        <path d="M10.5 18.5h3" />
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24">
+        <path d="M12 21s6.5-5.6 6.5-11a6.5 6.5 0 0 0-13 0c0 5.4 6.5 11 6.5 11z" />
+        <circle cx="12" cy="10" r="2.4" />
+      </symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24">
+        <path
+          d="M4.5 6.5h15M9.5 6.5v-2h5v2M6.5 6.5l.8 12a2 2 0 0 0 2 1.9h5.4a2 2 0 0 0 2-1.9l.8-12M10 11v5M14 11v5"
+        />
+      </symbol>
+      <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6" /></symbol>
+      <symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24">
+        <path d="M12 4v11M7.5 11l4.5 4.5 4.5-4.5M5 19.5h14" />
+      </symbol>
+      <symbol id="i-windows" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          stroke="none"
+          d="M3 5.5l7.5-1.05v7.05H3zM11.5 4.3L21 3v8.5h-9.5zM3 12.5h7.5v7.05L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"
+        />
+      </symbol>
+    </svg>
+
+    <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+
+    <div class="bar-place">
+      <header class="bar">
+        <a class="brand" href="index.html" data-page="index.html">
+          <img src="icon.svg" alt="" /><span class="wordmark">Notereef</span>
+        </a>
+        <nav>
+          <a class="en" href="#features">Features</a>
+          <a class="en" href="#privacy">Privacy</a>
+          <a class="pl" href="#funkcje">Funkcje</a>
+          <a class="pl" href="#prywatnosc">Prywatność</a>
+        </nav>
         <div class="langs" role="group" aria-label="Language / Język">
-          <button type="button" data-set="en">English</button>
-          <button type="button" data-set="pl">Polski</button>
+          <button type="button" data-set="en" title="English">EN</button>
+          <button type="button" data-set="pl" title="Polski">PL</button>
         </div>
+        <a class="btn en" href="#get">Download</a>
+        <a class="btn pl" href="#pobierz">Pobierz</a>
       </header>
-
-      <main class="en" lang="en">
-        <h1>Notes, plans and money in one calm place.</h1>
-        <p class="muted">
-          Notereef keeps what you would otherwise spread over five apps: pages you write alone or
-          with others, a calendar, tasks, your budget and savings, and whiteboards.
-        </p>
-        <div class="card">
-          <ul>
-            <li><strong>Pages</strong> in workspaces, edited together live, linked into a graph.</li>
-            <li><strong>Calendar and tasks</strong>, with reminders on your phone.</li>
-            <li>
-              <strong>Finance</strong>: a monthly budget, stocks and other assets, savings goals and
-              expenses shared with friends.
-            </li>
-            <li><strong>Whiteboards</strong> to sketch on, alone or with others.</li>
-            <li>
-              <strong>Organizations</strong> for a family, a team or a company, where you choose who
-              may change things and who may only look.
-            </li>
-          </ul>
-        </div>
-        <p>For Windows and Android, in English, Polish, German and Spanish. No ads, no tracking.</p>
-        <div class="row">
-          <a class="btn" href="https://github.com/patbargg/notereef-releases/releases/latest"
-            >Download for Windows</a
-          >
-          <a class="btn soft" href="privacy.html" data-page="privacy.html">Privacy policy</a>
-        </div>
-        <h2>Contact</h2>
-        <p>
-          Patryk Barszczewski,
-          <a href="mailto:barszczewski.patryk01@gmail.com">barszczewski.patryk01@gmail.com</a>
-        </p>
-      </main>
-
-      <main class="pl" lang="pl">
-        <h1>Notatki, plany i pieniądze w jednym spokojnym miejscu.</h1>
-        <p class="muted">
-          Notereef trzyma to, co zwykle jest rozrzucone po pięciu aplikacjach: strony pisane
-          samodzielnie lub z innymi, kalendarz, zadania, budżet i oszczędności oraz tablice.
-        </p>
-        <div class="card">
-          <ul>
-            <li>
-              <strong>Strony</strong> w przestrzeniach, edytowane wspólnie na żywo i połączone w
-              graf.
-            </li>
-            <li><strong>Kalendarz i zadania</strong>, z przypomnieniami na telefonie.</li>
-            <li>
-              <strong>Finanse</strong>: budżet miesiąca, akcje i inny majątek, cele oszczędnościowe
-              oraz wydatki dzielone ze znajomymi.
-            </li>
-            <li><strong>Tablice</strong> do szkicowania, samodzielnie lub z innymi.</li>
-            <li>
-              <strong>Organizacje</strong> dla rodziny, zespołu lub firmy, w których wybierasz, kto
-              może zmieniać, a kto tylko oglądać.
-            </li>
-          </ul>
-        </div>
-        <p>
-          Na Windows i Androida, po polsku, angielsku, niemiecku i hiszpańsku. Bez reklam i bez
-          śledzenia.
-        </p>
-        <div class="row">
-          <a class="btn" href="https://github.com/patbargg/notereef-releases/releases/latest"
-            >Pobierz na Windows</a
-          >
-          <a class="btn soft" href="privacy.html" data-page="privacy.html">Polityka prywatności</a>
-        </div>
-        <h2>Kontakt</h2>
-        <p>
-          Patryk Barszczewski,
-          <a href="mailto:barszczewski.patryk01@gmail.com">barszczewski.patryk01@gmail.com</a>
-        </p>
-      </main>
-
-      <footer>
-        <a href="index.html" data-page="index.html">Notereef</a>
-        <a href="privacy.html" data-page="privacy.html"
-          ><span class="en">Privacy policy</span><span class="pl">Polityka prywatności</span></a
-        >
-        <a href="delete-account.html" data-page="delete-account.html"
-          ><span class="en">Delete account</span><span class="pl">Usuń konto</span></a
-        >
-      </footer>
     </div>
+
+    <!-- ---------------------------------------------------------------- English -->
+    <main class="en" lang="en">
+      <div class="wrap hero">
+        <div class="rise">
+          <span class="chip"><span class="dot"></span>For Windows and Android</span>
+          <h1>Notes, plans and money <em>in one calm place.</em></h1>
+          <p class="lead">
+            Notereef keeps what you would otherwise spread over five apps: pages you write alone or
+            with others, a calendar, tasks, your budget and savings, and whiteboards.
+          </p>
+          <div class="actions">
+            <a
+              class="btn large"
+              href="https://github.com/patbargg/notereef-releases/releases/latest"
+            >
+              <svg class="line"><use href="#i-windows" /></svg>Download for Windows
+            </a>
+            <a class="btn large soft" href="#features">
+              See what is inside<svg class="line"><use href="#i-down" /></svg>
+            </a>
+          </div>
+          <p class="note">No ads, no tracking. In English, Polish, German and Spanish.</p>
+        </div>
+        <div class="phones rise" style="--after: 0.15s" aria-hidden="true">
+          <figure class="phone">
+            <img src="shots/calendar-en.webp" alt="" width="720" height="1280" loading="lazy" />
+          </figure>
+          <figure class="phone">
+            <img src="shots/finance-en.webp" alt="" width="720" height="1280" loading="lazy" />
+          </figure>
+          <figure class="phone">
+            <img src="shots/home-en.webp" alt="" width="720" height="1280" loading="lazy" />
+          </figure>
+        </div>
+      </div>
+
+      <section id="features" class="wrap">
+        <div class="head rise">
+          <p class="eyebrow">What is inside</p>
+          <h2>Everything you keep, kept together</h2>
+          <p>One app instead of five, and one calm look for all of it.</p>
+        </div>
+        <div class="grid">
+          <article class="card lift feature rise">
+            <span class="tile"><svg class="line"><use href="#i-page" /></svg></span>
+            <h3>Pages</h3>
+            <p>
+              Write in workspaces, alone or together live, with everyone's cursor on the page.
+              Link pages with @ and see them as a graph.
+            </p>
+          </article>
+          <article class="card lift feature rise" style="--after: 0.06s">
+            <span class="tile"><svg class="line"><use href="#i-calendar" /></svg></span>
+            <h3>Calendar</h3>
+            <p>
+              Your days and what is planned in them, yours alone or shared with a workspace. A
+              timetable can be read from a screenshot.
+            </p>
+          </article>
+          <article class="card lift feature rise" style="--after: 0.12s">
+            <span class="tile"><svg class="line"><use href="#i-check" /></svg></span>
+            <h3>Tasks</h3>
+            <p>
+              A board of three columns: to do, in progress and done. With deadlines, and reminders
+              on your phone.
+            </p>
+          </article>
+          <article class="card lift feature rise">
+            <span class="tile"><svg class="line"><use href="#i-wallet" /></svg></span>
+            <h3>Finance</h3>
+            <p>
+              A monthly budget, stocks and other assets with current prices, savings goals, and
+              expenses shared with friends.
+            </p>
+          </article>
+          <article class="card lift feature rise" style="--after: 0.06s">
+            <span class="tile"><svg class="line"><use href="#i-pen" /></svg></span>
+            <h3>Whiteboards</h3>
+            <p>
+              Sketch, write and stick notes on a board without edges, alone or with others.
+            </p>
+          </article>
+          <article class="card lift feature rise" style="--after: 0.12s">
+            <span class="tile"><svg class="line"><use href="#i-users" /></svg></span>
+            <h3>Organizations</h3>
+            <p>
+              A shared place for a family, a team or a company. You choose who may change things
+              and who may only look.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="wrap">
+        <div class="card show rise">
+          <div class="words">
+            <p class="eyebrow">Pages</p>
+            <h2>Notes that find each other</h2>
+            <p class="say">
+              Every page is a dot under its workspace. Type @ to link one page to another, and the
+              link shows up in the graph.
+            </p>
+            <ul class="ticks">
+              <li>Written together live, with other people</li>
+              <li>Subpages as deep as you need</li>
+              <li>Moved in and out as Markdown</li>
+              <li>Read on a phone, and enlarged with two fingers</li>
+            </ul>
+          </div>
+          <div class="screens">
+            <figure class="screen">
+              <img
+                src="shots/graph-en.webp"
+                alt="The graph: four workspaces and their pages, joined by lines"
+                width="720"
+                height="1280"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+
+        <div class="card show turned rise">
+          <div class="words">
+            <p class="eyebrow">Calendar and tasks</p>
+            <h2>Your week, in view</h2>
+            <p class="say">
+              The calendar and the tasks sit next to your notes, not in another app.
+            </p>
+            <ul class="ticks">
+              <li>Events of your own, or shared with a workspace</li>
+              <li>Tasks you move from to do to done</li>
+              <li>Reminders on Android before an event starts</li>
+              <li>A Home that shows what is coming, arranged your way</li>
+            </ul>
+          </div>
+          <div class="screens">
+            <figure class="screen">
+              <img
+                src="shots/calendar-en.webp"
+                alt="The calendar: a month, and the events of the chosen day"
+                width="720"
+                height="1280"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="screen">
+              <img
+                src="shots/tasks-en.webp"
+                alt="The tasks: a list of what is to do"
+                width="720"
+                height="1280"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+
+        <div class="card show rise">
+          <div class="words">
+            <p class="eyebrow">Finance</p>
+            <h2>Money, without the spreadsheet</h2>
+            <p class="say">
+              See where a month went at a glance, and what is left of it.
+            </p>
+            <ul class="ticks">
+              <li>Income and expenses by category, month by month</li>
+              <li>A bank's screenshot, read on your own device</li>
+              <li>Stocks and funds at their current prices</li>
+              <li>Savings goals, and expenses split with friends</li>
+            </ul>
+          </div>
+          <div class="screens">
+            <figure class="screen">
+              <img
+                src="shots/finance-en.webp"
+                alt="The budget: income, expenses, and a chart of the month's spending"
+                width="720"
+                height="1280"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy" class="wrap">
+        <div class="head rise">
+          <p class="eyebrow">Yours</p>
+          <h2>Quiet by design</h2>
+          <p>What you write is yours. The app is built to leave it that way.</p>
+        </div>
+        <div class="quiet">
+          <article class="card feature rise">
+            <span class="tile"><svg class="line"><use href="#i-shield" /></svg></span>
+            <h3>No ads, no tracking</h3>
+            <p>No advertising and no analytics tools. Nothing follows you around.</p>
+          </article>
+          <article class="card feature rise" style="--after: 0.06s">
+            <span class="tile"><svg class="line"><use href="#i-device" /></svg></span>
+            <h3>Read on your device</h3>
+            <p>Screenshots you import are read on your device and never sent anywhere.</p>
+          </article>
+          <article class="card feature rise" style="--after: 0.12s">
+            <span class="tile"><svg class="line"><use href="#i-pin" /></svg></span>
+            <h3>Kept in the EU</h3>
+            <p>Your content is stored on servers in the European Union.</p>
+          </article>
+          <article class="card feature rise" style="--after: 0.18s">
+            <span class="tile"><svg class="line"><use href="#i-trash" /></svg></span>
+            <h3>Gone when you say so</h3>
+            <p>Delete your account with everything in it, in the app or on this site.</p>
+          </article>
+        </div>
+        <p class="center rise">
+          <a class="btn soft" href="privacy.html" data-page="privacy.html">
+            Read the privacy policy<svg class="line"><use href="#i-right" /></svg>
+          </a>
+        </p>
+      </section>
+
+      <section id="get" class="wrap">
+        <div class="card tinted get rise">
+          <div>
+            <h2>Get Notereef</h2>
+            <p class="say">
+              Sign up with an email address and a name, and the first page is yours to write.
+            </p>
+            <div class="chips">
+              <span class="chip">English</span><span class="chip">Polski</span
+              ><span class="chip">Deutsch</span><span class="chip">Español</span>
+            </div>
+          </div>
+          <div class="ways">
+            <a class="way" href="https://github.com/patbargg/notereef-releases/releases/latest">
+              <span class="tile"><svg class="line"><use href="#i-windows" /></svg></span>
+              <span><strong>Windows</strong><span>The installer, with updates built in</span></span>
+              <svg class="line go"><use href="#i-download" /></svg>
+            </a>
+            <div class="way later">
+              <span class="tile"><svg class="line"><use href="#i-device" /></svg></span>
+              <span><strong>Android</strong><span>In closed testing on Google Play</span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ----------------------------------------------------------------- Polski -->
+    <main class="pl" lang="pl">
+      <div class="wrap hero">
+        <div class="rise">
+          <span class="chip"><span class="dot"></span>Na Windows i Androida</span>
+          <h1>Notatki, plany i pieniądze <em>w jednym spokojnym miejscu.</em></h1>
+          <p class="lead">
+            Notereef trzyma to, co zwykle jest rozrzucone po pięciu aplikacjach: strony pisane
+            samodzielnie lub z innymi, kalendarz, zadania, budżet i oszczędności oraz tablice.
+          </p>
+          <div class="actions">
+            <a
+              class="btn large"
+              href="https://github.com/patbargg/notereef-releases/releases/latest"
+            >
+              <svg class="line"><use href="#i-windows" /></svg>Pobierz na Windows
+            </a>
+            <a class="btn large soft" href="#funkcje">
+              Zobacz, co jest w środku<svg class="line"><use href="#i-down" /></svg>
+            </a>
+          </div>
+          <p class="note">
+            Bez reklam i bez śledzenia. Po polsku, angielsku, niemiecku i hiszpańsku.
+          </p>
+        </div>
+        <div class="phones rise" style="--after: 0.15s" aria-hidden="true">
+          <figure class="phone">
+            <img src="shots/calendar-pl.webp" alt="" width="720" height="1280" loading="lazy" />
+          </figure>
+          <figure class="phone">
+            <img src="shots/finance-pl.webp" alt="" width="720" height="1280" loading="lazy" />
+          </figure>
+          <figure class="phone">
+            <img src="shots/home-pl.webp" alt="" width="720" height="1280" loading="lazy" />
+          </figure>
+        </div>
+      </div>
+
+      <section id="funkcje" class="wrap">
+        <div class="head rise">
+          <p class="eyebrow">Co jest w środku</p>
+          <h2>Wszystko, co trzymasz, w jednym miejscu</h2>
+          <p>Jedna aplikacja zamiast pięciu i jeden spokojny wygląd dla całości.</p>
+        </div>
+        <div class="grid">
+          <article class="card lift feature rise">
+            <span class="tile"><svg class="line"><use href="#i-page" /></svg></span>
+            <h3>Strony</h3>
+            <p>
+              Pisz w przestrzeniach, samodzielnie albo wspólnie na żywo, z kursorem każdej osoby
+              na stronie. Łącz strony znakiem @ i oglądaj je jako graf.
+            </p>
+          </article>
+          <article class="card lift feature rise" style="--after: 0.06s">
+            <span class="tile"><svg class="line"><use href="#i-calendar" /></svg></span>
+            <h3>Kalendarz</h3>
+            <p>
+              Twoje dni i to, co w nich zaplanowane, tylko dla Ciebie albo wspólnie z przestrzenią.
+              Plan zajęć można odczytać ze zrzutu ekranu.
+            </p>
+          </article>
+          <article class="card lift feature rise" style="--after: 0.12s">
+            <span class="tile"><svg class="line"><use href="#i-check" /></svg></span>
+            <h3>Zadania</h3>
+            <p>
+              Tablica z trzema kolumnami: do zrobienia, w trakcie i zrobione. Z terminami i
+              przypomnieniami na telefonie.
+            </p>
+          </article>
+          <article class="card lift feature rise">
+            <span class="tile"><svg class="line"><use href="#i-wallet" /></svg></span>
+            <h3>Finanse</h3>
+            <p>
+              Budżet miesiąca, akcje i inny majątek z aktualnymi cenami, cele oszczędnościowe oraz
+              wydatki dzielone ze znajomymi.
+            </p>
+          </article>
+          <article class="card lift feature rise" style="--after: 0.06s">
+            <span class="tile"><svg class="line"><use href="#i-pen" /></svg></span>
+            <h3>Tablice</h3>
+            <p>
+              Szkicuj, pisz i przyklejaj karteczki na tablicy bez krawędzi, samodzielnie albo z
+              innymi.
+            </p>
+          </article>
+          <article class="card lift feature rise" style="--after: 0.12s">
+            <span class="tile"><svg class="line"><use href="#i-users" /></svg></span>
+            <h3>Organizacje</h3>
+            <p>
+              Wspólne miejsce dla rodziny, zespołu lub firmy. To Ty wybierasz, kto może zmieniać,
+              a kto tylko oglądać.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="wrap">
+        <div class="card show rise">
+          <div class="words">
+            <p class="eyebrow">Strony</p>
+            <h2>Notatki, które się odnajdują</h2>
+            <p class="say">
+              Każda strona to kropka pod swoją przestrzenią. Wpisz @, żeby połączyć jedną stronę z
+              drugą, a połączenie pojawi się na grafie.
+            </p>
+            <ul class="ticks">
+              <li>Pisane wspólnie na żywo, z innymi osobami</li>
+              <li>Podstrony tak głęboko, jak potrzebujesz</li>
+              <li>Eksport i import w Markdownie</li>
+              <li>Czytanie na telefonie i powiększanie dwoma palcami</li>
+            </ul>
+          </div>
+          <div class="screens">
+            <figure class="screen">
+              <img
+                src="shots/graph-pl.webp"
+                alt="Graf: cztery przestrzenie i ich strony połączone liniami"
+                width="720"
+                height="1280"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+
+        <div class="card show turned rise">
+          <div class="words">
+            <p class="eyebrow">Kalendarz i zadania</p>
+            <h2>Twój tydzień na widoku</h2>
+            <p class="say">
+              Kalendarz i zadania są tuż obok notatek, a nie w innej aplikacji.
+            </p>
+            <ul class="ticks">
+              <li>Wydarzenia własne albo wspólne z przestrzenią</li>
+              <li>Zadania, które przesuwasz od „do zrobienia” do „zrobione”</li>
+              <li>Przypomnienia na Androidzie przed początkiem wydarzenia</li>
+              <li>Ekran Start, który pokazuje, co nadchodzi, ułożony po Twojemu</li>
+            </ul>
+          </div>
+          <div class="screens">
+            <figure class="screen">
+              <img
+                src="shots/calendar-pl.webp"
+                alt="Kalendarz: miesiąc i wydarzenia wybranego dnia"
+                width="720"
+                height="1280"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="screen">
+              <img
+                src="shots/tasks-pl.webp"
+                alt="Zadania: lista tego, co jest do zrobienia"
+                width="720"
+                height="1280"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+
+        <div class="card show rise">
+          <div class="words">
+            <p class="eyebrow">Finanse</p>
+            <h2>Pieniądze bez arkusza kalkulacyjnego</h2>
+            <p class="say">
+              Jedno spojrzenie i wiesz, na co poszedł miesiąc i ile z niego zostało.
+            </p>
+            <ul class="ticks">
+              <li>Przychody i wydatki według kategorii, miesiąc po miesiącu</li>
+              <li>Zrzut ekranu z banku odczytany na Twoim urządzeniu</li>
+              <li>Akcje i fundusze w aktualnych cenach</li>
+              <li>Cele oszczędnościowe i wydatki dzielone ze znajomymi</li>
+            </ul>
+          </div>
+          <div class="screens">
+            <figure class="screen">
+              <img
+                src="shots/finance-pl.webp"
+                alt="Budżet: przychody, wydatki i wykres wydatków w miesiącu"
+                width="720"
+                height="1280"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="prywatnosc" class="wrap">
+        <div class="head rise">
+          <p class="eyebrow">Twoje</p>
+          <h2>Spokój w założeniu</h2>
+          <p>To, co piszesz, jest Twoje. Aplikacja jest zbudowana tak, żeby tak zostało.</p>
+        </div>
+        <div class="quiet">
+          <article class="card feature rise">
+            <span class="tile"><svg class="line"><use href="#i-shield" /></svg></span>
+            <h3>Bez reklam i śledzenia</h3>
+            <p>Żadnych reklam ani narzędzi analitycznych. Nic za Tobą nie chodzi.</p>
+          </article>
+          <article class="card feature rise" style="--after: 0.06s">
+            <span class="tile"><svg class="line"><use href="#i-device" /></svg></span>
+            <h3>Odczyt na urządzeniu</h3>
+            <p>
+              Importowane zrzuty ekranu są odczytywane na Twoim urządzeniu i nigdzie nie są
+              wysyłane.
+            </p>
+          </article>
+          <article class="card feature rise" style="--after: 0.12s">
+            <span class="tile"><svg class="line"><use href="#i-pin" /></svg></span>
+            <h3>Dane w UE</h3>
+            <p>Twoje treści są przechowywane na serwerach w Unii Europejskiej.</p>
+          </article>
+          <article class="card feature rise" style="--after: 0.18s">
+            <span class="tile"><svg class="line"><use href="#i-trash" /></svg></span>
+            <h3>Znika, gdy zechcesz</h3>
+            <p>Usuń konto ze wszystkim, co w nim jest: w aplikacji albo na tej stronie.</p>
+          </article>
+        </div>
+        <p class="center rise">
+          <a class="btn soft" href="privacy.html" data-page="privacy.html">
+            Przeczytaj politykę prywatności<svg class="line"><use href="#i-right" /></svg>
+          </a>
+        </p>
+      </section>
+
+      <section id="pobierz" class="wrap">
+        <div class="card tinted get rise">
+          <div>
+            <h2>Pobierz Notereef</h2>
+            <p class="say">
+              Załóż konto, podając adres e-mail i imię, a pierwsza strona czeka na Twoje słowa.
+            </p>
+            <div class="chips">
+              <span class="chip">Polski</span><span class="chip">English</span
+              ><span class="chip">Deutsch</span><span class="chip">Español</span>
+            </div>
+          </div>
+          <div class="ways">
+            <a class="way" href="https://github.com/patbargg/notereef-releases/releases/latest">
+              <span class="tile"><svg class="line"><use href="#i-windows" /></svg></span>
+              <span
+                ><strong>Windows</strong><span>Instalator z wbudowanymi aktualizacjami</span></span
+              >
+              <svg class="line go"><use href="#i-download" /></svg>
+            </a>
+            <div class="way later">
+              <span class="tile"><svg class="line"><use href="#i-device" /></svg></span>
+              <span><strong>Android</strong><span>W zamkniętych testach w Google Play</span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <a class="brand" href="index.html" data-page="index.html">
+          <img src="icon.svg" alt="" /><span class="wordmark">Notereef</span>
+        </a>
+        <nav>
+          <a href="privacy.html" data-page="privacy.html"
+            ><span class="en">Privacy policy</span><span class="pl">Polityka prywatności</span></a
+          >
+          <a href="delete-account.html" data-page="delete-account.html"
+            ><span class="en">Delete account</span><span class="pl">Usuń konto</span></a
+          >
+          <a href="mailto:barszczewski.patryk01@gmail.com"
+            ><span class="en">Contact</span><span class="pl">Kontakt</span></a
+          >
+        </nav>
+        <span>© 2026 Patryk Barszczewski</span>
+      </div>
+    </footer>
   </body>
 </html>

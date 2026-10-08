@@ -5,6 +5,9 @@
   var wanted = asked || navigator.language || "en";
   var language = wanted.toLowerCase().indexOf("pl") === 0 ? "pl" : "en";
 
+  // What arrives as it is scrolled to stays put for whoever has no scripts.
+  document.documentElement.classList.add("js");
+
   function show(next) {
     language = next;
     document.documentElement.dataset.lang = next;
@@ -24,6 +27,37 @@
       button.addEventListener("click", function () {
         show(button.dataset.set);
       });
+    });
+
+    // Things rise into place the first time they are scrolled to.
+    var rising = document.querySelectorAll(".rise");
+    if ("IntersectionObserver" in window) {
+      var seen = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("in");
+            seen.unobserve(entry.target);
+          });
+        },
+        { rootMargin: "0px 0px -8% 0px" },
+      );
+      rising.forEach(function (element) {
+        seen.observe(element);
+      });
+    } else {
+      rising.forEach(function (element) {
+        element.classList.add("in");
+      });
+    }
+
+    // A light under the pointer on the panes that lift.
+    document.addEventListener("pointermove", function (event) {
+      var pane = event.target.closest && event.target.closest(".card.lift");
+      if (!pane) return;
+      var box = pane.getBoundingClientRect();
+      pane.style.setProperty("--x", event.clientX - box.left + "px");
+      pane.style.setProperty("--y", event.clientY - box.top + "px");
     });
   });
 
