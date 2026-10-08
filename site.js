@@ -1,9 +1,14 @@
-// Which of the two languages a page shows: the one asked for in the address
-// (`?lang=pl`, which is how the app links here), or else the browser's.
+// Which of its languages a page shows: the one asked for in the address
+// (`?lang=pl`, which is how the app links here), or else the browser's, or
+// else English.
 (function () {
+  var LANGUAGES = ["en", "pl", "de", "es"];
+  function known(value) {
+    var code = (value || "").toLowerCase().slice(0, 2);
+    return LANGUAGES.indexOf(code) < 0 ? null : code;
+  }
   var asked = new URLSearchParams(location.search).get("lang");
-  var wanted = asked || navigator.language || "en";
-  var language = wanted.toLowerCase().indexOf("pl") === 0 ? "pl" : "en";
+  var language = known(asked) || known(navigator.language) || "en";
 
   // What arrives as it is scrolled to stays put for whoever has no scripts.
   document.documentElement.classList.add("js");

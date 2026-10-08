@@ -26,6 +26,22 @@
       failed:
         "Coś poszło nie tak i konto nie zostało usunięte. Spróbuj ponownie albo napisz na barszczewski.patryk01@gmail.com.",
     },
+    de: {
+      wrong: "E-Mail oder Passwort ist falsch.",
+      unconfirmed: "Die E-Mail-Adresse dieses Kontos wurde noch nicht bestätigt.",
+      busy: "Zu viele Versuche. Warte eine Minute und versuche es erneut.",
+      offline: "Der Server war nicht erreichbar. Prüfe deine Verbindung und versuche es erneut.",
+      failed:
+        "Etwas ist schiefgegangen, und das Konto wurde nicht gelöscht. Versuche es erneut oder schreibe an barszczewski.patryk01@gmail.com.",
+    },
+    es: {
+      wrong: "Correo o contraseña incorrectos.",
+      unconfirmed: "La dirección de correo de esta cuenta aún no se ha confirmado.",
+      busy: "Demasiados intentos. Espera un minuto y vuelve a intentarlo.",
+      offline: "No se pudo conectar con el servidor. Comprueba tu conexión y vuelve a intentarlo.",
+      failed:
+        "Algo salió mal y la cuenta no se eliminó. Vuelve a intentarlo o escribe a barszczewski.patryk01@gmail.com.",
+    },
   };
   var text = function (key) {
     return TEXT[window.siteLanguage()][key];
