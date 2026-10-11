@@ -1,6 +1,3 @@
-// Which of its languages a page shows: the one asked for in the address
-// (`?lang=pl`, which is how the app links here), or else the browser's, or
-// else English.
 (function () {
   var LANGUAGES = ["en", "pl", "de", "es"];
   function known(value) {
@@ -10,7 +7,6 @@
   var asked = new URLSearchParams(location.search).get("lang");
   var language = known(asked) || known(navigator.language) || "en";
 
-  // What arrives as it is scrolled to stays put for whoever has no scripts.
   document.documentElement.classList.add("js");
 
   function show(next) {
@@ -19,7 +15,6 @@
     document.documentElement.lang = next;
     var title = document.querySelector('meta[name="title-' + next + '"]');
     if (title) document.title = title.content;
-    // Links to the other pages keep the language.
     document.querySelectorAll("a[data-page]").forEach(function (link) {
       link.href = link.dataset.page + "?lang=" + next;
     });
@@ -34,7 +29,6 @@
       });
     });
 
-    // Things rise into place the first time they are scrolled to.
     var rising = document.querySelectorAll(".rise");
     if ("IntersectionObserver" in window) {
       var seen = new IntersectionObserver(
@@ -56,7 +50,6 @@
       });
     }
 
-    // A light under the pointer on the panes that lift.
     document.addEventListener("pointermove", function (event) {
       var pane = event.target.closest && event.target.closest(".card.lift");
       if (!pane) return;

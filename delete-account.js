@@ -1,11 +1,4 @@
-// Deleting a Notereef account from a browser, for someone who no longer has
-// the app. It does what the app's Settings → Delete account does: log in,
-// remove the account's pictures (files, which the database cannot remove),
-// then ask the database to delete the account (`delete_account`, migration
-// 0023). The password is used for the one log-in request and kept nowhere.
 (function () {
-  // The app's database. The key is the public one every copy of the app
-  // carries: it identifies the project and gives no access by itself.
   var API = "https://vexuorcavhexnfhhnvtc.supabase.co";
   var KEY = "sb_publishable_BmLeBzt7ZFxwxe3kmKA4QA_KPVCaGP8";
 
@@ -56,7 +49,6 @@
   var sure = byId("sure");
   var deleteButton = byId("delete-button");
 
-  // The account that is logged in on this page: its id, address and token.
   var account = null;
 
   function request(method, path, body) {
@@ -71,7 +63,6 @@
     });
   }
 
-  // A request that has to succeed; gives back what the server answered.
   async function must(method, path, body) {
     var response = await request(method, path, body);
     if (!response.ok) throw new Error(method + " " + path + ": " + response.status);
@@ -130,7 +121,6 @@
     login.hidden = false;
   });
 
-  // Every file in one folder of the pictures' bucket.
   async function forget(folder) {
     var files = await must("POST", "/storage/v1/object/list/avatars", {
       prefix: folder,
@@ -153,8 +143,6 @@
     show(error, "");
     deleteButton.disabled = true;
     try {
-      // The account's own picture, and those of the organizations it made
-      // (they are deleted with it).
       var owned = await must(
         "GET",
         "/rest/v1/organizations?select=id&created_by=eq." + encodeURIComponent(account.id),

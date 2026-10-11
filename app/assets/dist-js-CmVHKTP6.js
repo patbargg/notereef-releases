@@ -1,0 +1,1 @@
+import{f as e}from"./index-BXx7B60N.js";async function t(t,n){await e(`plugin:opener|open_url`,{url:t,with:n})}export{t as openUrl};

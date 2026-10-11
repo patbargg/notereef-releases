@@ -1,8 +1,3 @@
-/* The app's public pages, in the app's own look: a navy page with slow blue
-   light behind it, panes of glass with a bright rim, pills for everything
-   that is pressed, a serif for what is said large. Nothing is fetched from
-   anywhere else: the fonts and the pictures lie next to this file. */
-
 @font-face {
   font-family: "Inter Variable";
   font-style: normal;
@@ -51,7 +46,6 @@
     U+FEFF, U+FFFD;
 }
 
-/* The wordmark only, so only the letters it has. */
 @font-face {
   font-family: "Playfair Display";
   font-style: italic;
@@ -89,7 +83,6 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
   scroll-behavior: smooth;
-  /* A link into the page stops under the bar that floats over it. */
   scroll-padding-top: 6rem;
 }
 
@@ -122,16 +115,12 @@ img {
   display: none !important;
 }
 
-/* One language at a time once the script has picked it; without scripts all
-   of them show, English first. */
 html[data-lang]:not([data-lang="en"]) .en,
 html[data-lang]:not([data-lang="pl"]) .pl,
 html[data-lang]:not([data-lang="de"]) .de,
 html[data-lang]:not([data-lang="es"]) .es {
   display: none !important;
 }
-
-/* --- The light behind the glass ------------------------------------------ */
 
 .aurora {
   position: fixed;
@@ -143,7 +132,6 @@ html[data-lang]:not([data-lang="es"]) .es {
     radial-gradient(90% 60% at 50% -10%, rgb(26 52 122 / 0.55), transparent 70%), var(--bg);
 }
 
-/* Blurred once, then only moved, so the drift costs next to nothing. */
 .aurora span {
   position: absolute;
   border-radius: 50%;
@@ -199,8 +187,6 @@ html[data-lang]:not([data-lang="es"]) .es {
   }
 }
 
-/* --- Building blocks ------------------------------------------------------ */
-
 .wrap {
   width: 100%;
   max-width: 70rem;
@@ -208,12 +194,10 @@ html[data-lang]:not([data-lang="es"]) .es {
   padding-inline: 1.5rem;
 }
 
-/* The phones of the first screen lean out past the edge of a narrow one. */
 main {
   overflow-x: clip;
 }
 
-/* A pane of glass, with light catching its top-left edge. */
 .card {
   position: relative;
   border: 1px solid rgb(170 195 255 / 0.1);
@@ -243,8 +227,6 @@ main {
   pointer-events: none;
 }
 
-/* One that answers the pointer: it lifts, and a light follows (`--x` and
-   `--y` are set by `site.js`). */
 .card.lift {
   transition:
     transform 0.35s var(--ease-soft),
@@ -283,7 +265,6 @@ main {
   }
 }
 
-/* Filled with the accent colour. */
 .card.tinted {
   border-color: rgb(120 170 255 / 0.32);
   background: linear-gradient(
@@ -403,7 +384,6 @@ main {
   font-size: 0.875rem;
 }
 
-/* A small pill that says something and does nothing. */
 .chip {
   display: inline-flex;
   align-items: center;
@@ -426,7 +406,6 @@ main {
   box-shadow: 0 0 8px rgb(52 211 153 / 0.9);
 }
 
-/* The square a section's sign sits in, as on the app's Home. */
 .tile {
   display: flex;
   align-items: center;
@@ -452,8 +431,6 @@ svg.line {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-
-/* --- The bar over every page ---------------------------------------------- */
 
 .bar-place {
   position: sticky;
@@ -521,7 +498,6 @@ svg.line {
   background: rgb(150 180 255 / 0.1);
 }
 
-/* The choice of language. */
 .langs {
   display: flex;
   padding: 0.2rem;
@@ -562,8 +538,6 @@ html[data-lang="es"] .langs [data-set="es"] {
   font-size: 0.875rem;
 }
 
-/* --- The first screen ------------------------------------------------------ */
-
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -579,7 +553,6 @@ html[data-lang="es"] .langs [data-set="es"] {
   text-wrap: balance;
 }
 
-/* The second half of the sentence, in the light of the page. */
 .hero h1 em {
   font-style: normal;
   background: linear-gradient(100deg, #a9c8ff 10%, #6ea5ff 55%, #a99bff);
@@ -610,7 +583,6 @@ html[data-lang="es"] .langs [data-set="es"] {
   font-size: 0.8125rem;
 }
 
-/* Three phones, the one in the middle in front. */
 .phones {
   position: relative;
   height: 34rem;
@@ -680,8 +652,6 @@ html[data-lang="es"] .langs [data-set="es"] {
   }
 }
 
-/* --- Sections -------------------------------------------------------------- */
-
 section {
   padding-block: 4rem;
 }
@@ -707,7 +677,6 @@ section {
   font-size: 1.0625rem;
 }
 
-/* What the app is made of. */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -732,7 +701,6 @@ section {
   line-height: 1.6;
 }
 
-/* A screen of the app next to what it is for. */
 .show {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -823,7 +791,6 @@ section {
   margin-top: 2.5rem;
 }
 
-/* What the app does not do with what is put in it. */
 .quiet {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -847,7 +814,6 @@ section {
   text-align: center;
 }
 
-/* The last pane: where to get it. */
 .get {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
@@ -935,8 +901,6 @@ a.way:hover {
   color: #b6c6ee;
 }
 
-/* --- The foot of every page ------------------------------------------------ */
-
 footer {
   margin-top: 3rem;
   border-top: 1px solid var(--line);
@@ -981,8 +945,6 @@ footer a:not(.brand) {
 footer a:not(.brand):hover {
   color: var(--fg);
 }
-
-/* --- A page of text (the policy, deleting an account) ----------------------- */
 
 .doc {
   max-width: 50rem;
@@ -1187,9 +1149,6 @@ form .btn {
   gap: 0.6rem;
 }
 
-/* --- Arriving --------------------------------------------------------------- */
-
-/* Only with scripts: without them nothing would ever bring these in. */
 .js .rise {
   opacity: 0;
   transform: translateY(1.5rem);
@@ -1203,8 +1162,6 @@ form .btn {
   opacity: 1;
   transform: none;
 }
-
-/* --- Narrower screens ------------------------------------------------------- */
 
 @media (max-width: 60rem) {
   .hero {
@@ -1348,7 +1305,6 @@ form .btn {
     width: 100%;
   }
 
-  /* A table too wide for a phone: each row becomes a small block. */
   table,
   tbody,
   tr,
