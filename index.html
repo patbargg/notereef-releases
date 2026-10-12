@@ -59,6 +59,20 @@
           d="M4.5 6.5h15M9.5 6.5v-2h5v2M6.5 6.5l.8 12a2 2 0 0 0 2 1.9h5.4a2 2 0 0 0 2-1.9l.8-12M10 11v5M14 11v5"
         />
       </symbol>
+      <symbol id="i-table" viewBox="0 0 24 24">
+        <rect x="3.5" y="4.5" width="17" height="15" rx="2.5" />
+        <path d="M3.5 9.5h17M3.5 14.5h17M9.5 9.5v10" />
+      </symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24">
+        <path d="M11 3.5l1.9 5.1 5.1 1.9-5.1 1.9L11 17.5l-1.9-5.1L4 10.5l5.1-1.9z" />
+        <path d="M18.5 15l.75 1.75L21 17.5l-1.75.75L18.5 20l-.75-1.75L16 17.5l1.75-.75z" />
+      </symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24">
+        <path
+          d="M5 5h14a1.5 1.5 0 0 1 1.5 1.5v8A1.5 1.5 0 0 1 19 16h-7l-4.5 3.5V16H5a1.5 1.5 0 0 1-1.5-1.5v-8A1.5 1.5 0 0 1 5 5z"
+        />
+        <path d="M8 9.5h8M8 12.5h5" />
+      </symbol>
       <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6" /></symbol>
       <symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></symbol>
       <symbol id="i-download" viewBox="0 0 24 24">
@@ -102,6 +116,18 @@
           <button type="button" data-set="de" title="Deutsch">DE</button>
           <button type="button" data-set="es" title="Español">ES</button>
         </div>
+        <a class="btn soft web en" href="app/"
+          ><svg class="line"><use href="#i-globe" /></svg>Open in the browser</a
+        >
+        <a class="btn soft web pl" href="app/"
+          ><svg class="line"><use href="#i-globe" /></svg>Otwórz w przeglądarce</a
+        >
+        <a class="btn soft web de" href="app/"
+          ><svg class="line"><use href="#i-globe" /></svg>Im Browser öffnen</a
+        >
+        <a class="btn soft web es" href="app/"
+          ><svg class="line"><use href="#i-globe" /></svg>Abrir en el navegador</a
+        >
         <a class="btn en" href="#get">Download</a>
         <a class="btn pl" href="#pobierz">Pobierz</a>
         <a class="btn de" href="#herunterladen">Download</a>
@@ -120,26 +146,32 @@
           </p>
           <div class="actions">
             <a
-              class="btn large"
+              class="btn large win"
               href="https://github.com/patbargg/notereef-releases/releases/latest"
             >
               <svg class="line"><use href="#i-windows" /></svg>Download for Windows
             </a>
-            <a class="btn large soft" href="#features">
-              See what is inside<svg class="line"><use href="#i-down" /></svg>
+            <a class="btn large soft web" href="app/">
+              <svg class="line"><use href="#i-globe" /></svg>Open in the browser
             </a>
           </div>
           <p class="note">No ads, no tracking. In English, Polish, German and Spanish.</p>
         </div>
         <div class="phones rise" style="--after: 0.15s" aria-hidden="true">
           <figure class="phone">
-            <img src="shots/calendar-en.webp" alt="" width="720" height="1280" loading="lazy" />
+            <span class="glass">
+              <img src="shots/calendar-en.webp" alt="" width="720" height="1280" loading="lazy" />
+            </span>
           </figure>
           <figure class="phone">
-            <img src="shots/finance-en.webp" alt="" width="720" height="1280" loading="lazy" />
+            <span class="glass">
+              <img src="shots/finance-en.webp" alt="" width="720" height="1280" loading="lazy" />
+            </span>
           </figure>
           <figure class="phone">
-            <img src="shots/home-en.webp" alt="" width="720" height="1280" loading="lazy" />
+            <span class="glass">
+              <img src="shots/home-en.webp" alt="" width="720" height="1280" loading="lazy" />
+            </span>
           </figure>
         </div>
       </div>
@@ -155,15 +187,17 @@
             <span class="tile"><svg class="line"><use href="#i-page" /></svg></span>
             <h3>Pages</h3>
             <p>
-              Write in workspaces, alone or together live, with everyone's cursor on the page.
-              Link pages with @ and see them as a graph.
+              Write in workspaces, alone or together live, with everyone's cursor on
+              the page. Add pictures and files, link pages with @ and see them as a
+              graph.
             </p>
           </article>
           <article class="card lift feature rise" style="--after: 0.06s">
             <span class="tile"><svg class="line"><use href="#i-calendar" /></svg></span>
             <h3>Calendar</h3>
             <p>
-              Your days and what is planned in them, yours alone or shared with a workspace. A
+              Your days and what is planned in them, yours alone or shared with a
+              workspace. Events can come back every week, month or year, and a
               timetable can be read from a screenshot.
             </p>
           </article>
@@ -171,31 +205,60 @@
             <span class="tile"><svg class="line"><use href="#i-check" /></svg></span>
             <h3>Tasks</h3>
             <p>
-              A board of three columns: to do, in progress and done. With deadlines, and reminders
-              on your phone.
+              A board of three columns: to do, in progress and done. With deadlines,
+              reminders on your phone and, in an organization, the department a task
+              is for.
             </p>
           </article>
           <article class="card lift feature rise">
             <span class="tile"><svg class="line"><use href="#i-wallet" /></svg></span>
             <h3>Finance</h3>
             <p>
-              A monthly budget, stocks and other assets with current prices, savings goals, and
-              expenses shared with friends.
+              A monthly budget, stocks and other assets with current prices, savings
+              goals, and expenses shared with friends.
             </p>
           </article>
           <article class="card lift feature rise" style="--after: 0.06s">
             <span class="tile"><svg class="line"><use href="#i-pen" /></svg></span>
             <h3>Whiteboards</h3>
             <p>
-              Sketch, write and stick notes on a board without edges, alone or with others.
+              Sketch, write and stick notes on a board without edges, alone or with
+              others.
+            </p>
+          </article>
+          <article class="card lift feature rise" style="--after: 0.12s">
+            <span class="tile"><svg class="line"><use href="#i-table" /></svg></span>
+            <h3>Spreadsheets</h3>
+            <p>
+              Cells with values, formulas and about a hundred functions, shared like
+              everything else. A cell can even be worked out by a few lines of code.
+            </p>
+          </article>
+          <article class="card lift feature rise">
+            <span class="tile"><svg class="line"><use href="#i-spark" /></svg></span>
+            <h3>ReefAI</h3>
+            <p>
+              An assistant that looks into your calendar, tasks, pages and
+              spreadsheets and adds to them once you allow it. It runs on your own key
+              from Google, Anthropic or OpenAI.
+            </p>
+          </article>
+          <article class="card lift feature rise" style="--after: 0.06s">
+            <span class="tile"><svg class="line"><use href="#i-chat" /></svg></span>
+            <h3>Chat</h3>
+            <p>
+              Every organization has a chat: channels for everyone or for chosen
+              people, and private messages between two. An @ points at a page, an
+              event or a task.
             </p>
           </article>
           <article class="card lift feature rise" style="--after: 0.12s">
             <span class="tile"><svg class="line"><use href="#i-users" /></svg></span>
             <h3>Organizations</h3>
             <p>
-              A shared place for a family, a team or a company. You choose who may change things
-              and who may only look.
+              A shared place for a family, a team or a company, with departments. You
+              choose, part by part, who may change things, who may only look and who
+              sees nothing.
             </p>
           </article>
         </div>
@@ -215,17 +278,20 @@
               <li>Subpages as deep as you need</li>
               <li>Moved in and out as Markdown</li>
               <li>Read on a phone, and enlarged with two fingers</li>
+              <li>Pictures and files, kept with the page</li>
             </ul>
           </div>
           <div class="screens">
             <figure class="screen">
-              <img
-                src="shots/graph-en.webp"
-                alt="The graph: four workspaces and their pages, joined by lines"
-                width="720"
-                height="1280"
-                loading="lazy"
-              />
+              <span class="glass">
+                <img
+                  src="shots/graph-en.webp"
+                  alt="The graph: four workspaces and their pages, joined by lines"
+                  width="720"
+                  height="1280"
+                  loading="lazy"
+                />
+              </span>
             </figure>
           </div>
         </div>
@@ -239,6 +305,7 @@
             </p>
             <ul class="ticks">
               <li>Events of your own, or shared with a workspace</li>
+              <li>Events that come back every week, month or year</li>
               <li>Tasks you move from to do to done</li>
               <li>Reminders on Android before an event starts</li>
               <li>A Home that shows what is coming, arranged your way</li>
@@ -246,22 +313,26 @@
           </div>
           <div class="screens">
             <figure class="screen">
-              <img
-                src="shots/calendar-en.webp"
-                alt="The calendar: a month, and the events of the chosen day"
-                width="720"
-                height="1280"
-                loading="lazy"
-              />
+              <span class="glass">
+                <img
+                  src="shots/calendar-en.webp"
+                  alt="The calendar: a month, and the events of the chosen day"
+                  width="720"
+                  height="1280"
+                  loading="lazy"
+                />
+              </span>
             </figure>
             <figure class="screen">
-              <img
-                src="shots/tasks-en.webp"
-                alt="The tasks: a list of what is to do"
-                width="720"
-                height="1280"
-                loading="lazy"
-              />
+              <span class="glass">
+                <img
+                  src="shots/tasks-en.webp"
+                  alt="The tasks: a list of what is to do"
+                  width="720"
+                  height="1280"
+                  loading="lazy"
+                />
+              </span>
             </figure>
           </div>
         </div>
@@ -282,15 +353,34 @@
           </div>
           <div class="screens">
             <figure class="screen">
-              <img
-                src="shots/finance-en.webp"
-                alt="The budget: income, expenses, and a chart of the month's spending"
-                width="720"
-                height="1280"
-                loading="lazy"
-              />
+              <span class="glass">
+                <img
+                  src="shots/finance-en.webp"
+                  alt="The budget: income, expenses, and a chart of the month's spending"
+                  width="720"
+                  height="1280"
+                  loading="lazy"
+                />
+              </span>
             </figure>
           </div>
+        </div>
+
+        <div class="card show turned rise">
+          <div class="words">
+            <p class="eyebrow">Organizations</p>
+            <h2>Built for working together</h2>
+            <p class="say">
+              An organization has its own Home, calendar, tasks, finances and
+              workspaces, apart from everyone's private things.
+            </p>
+          </div>
+          <ul class="ticks">
+            <li>A chat with channels and private messages</li>
+            <li>Departments, and tasks that are theirs to do</li>
+            <li>Permissions for every part, workspace and channel</li>
+            <li>Only the sections your team needs</li>
+          </ul>
         </div>
       </section>
 
@@ -372,13 +462,13 @@
           </p>
           <div class="actions">
             <a
-              class="btn large"
+              class="btn large win"
               href="https://github.com/patbargg/notereef-releases/releases/latest"
             >
               <svg class="line"><use href="#i-windows" /></svg>Pobierz na Windows
             </a>
-            <a class="btn large soft" href="#funkcje">
-              Zobacz, co jest w środku<svg class="line"><use href="#i-down" /></svg>
+            <a class="btn large soft web" href="app/">
+              <svg class="line"><use href="#i-globe" /></svg>Otwórz w przeglądarce
             </a>
           </div>
           <p class="note">
@@ -387,13 +477,19 @@
         </div>
         <div class="phones rise" style="--after: 0.15s" aria-hidden="true">
           <figure class="phone">
-            <img src="shots/calendar-pl.webp" alt="" width="720" height="1280" loading="lazy" />
+            <span class="glass">
+              <img src="shots/calendar-pl.webp" alt="" width="720" height="1280" loading="lazy" />
+            </span>
           </figure>
           <figure class="phone">
-            <img src="shots/finance-pl.webp" alt="" width="720" height="1280" loading="lazy" />
+            <span class="glass">
+              <img src="shots/finance-pl.webp" alt="" width="720" height="1280" loading="lazy" />
+            </span>
           </figure>
           <figure class="phone">
-            <img src="shots/home-pl.webp" alt="" width="720" height="1280" loading="lazy" />
+            <span class="glass">
+              <img src="shots/home-pl.webp" alt="" width="720" height="1280" loading="lazy" />
+            </span>
           </figure>
         </div>
       </div>
@@ -409,48 +505,78 @@
             <span class="tile"><svg class="line"><use href="#i-page" /></svg></span>
             <h3>Strony</h3>
             <p>
-              Pisz w przestrzeniach, samodzielnie albo wspólnie na żywo, z kursorem każdej osoby
-              na stronie. Łącz strony znakiem @ i oglądaj je jako graf.
+              Pisz w przestrzeniach, samodzielnie albo wspólnie na żywo, z kursorem
+              każdej osoby na stronie. Dodawaj obrazy i pliki, łącz strony znakiem @ i
+              oglądaj je jako graf.
             </p>
           </article>
           <article class="card lift feature rise" style="--after: 0.06s">
             <span class="tile"><svg class="line"><use href="#i-calendar" /></svg></span>
             <h3>Kalendarz</h3>
             <p>
-              Twoje dni i to, co w nich zaplanowane, tylko dla Ciebie albo wspólnie z przestrzenią.
-              Plan zajęć można odczytać ze zrzutu ekranu.
+              Twoje dni i to, co w nich zaplanowane, tylko dla Ciebie albo wspólnie z
+              przestrzenią. Wydarzenia mogą wracać co tydzień, miesiąc lub rok, a plan
+              zajęć można odczytać ze zrzutu ekranu.
             </p>
           </article>
           <article class="card lift feature rise" style="--after: 0.12s">
             <span class="tile"><svg class="line"><use href="#i-check" /></svg></span>
             <h3>Zadania</h3>
             <p>
-              Tablica z trzema kolumnami: do zrobienia, w trakcie i zrobione. Z terminami i
-              przypomnieniami na telefonie.
+              Tablica z trzema kolumnami: do zrobienia, w trakcie i zrobione. Z
+              terminami, przypomnieniami na telefonie i, w organizacji, wydziałem,
+              który ma zadanie wykonać.
             </p>
           </article>
           <article class="card lift feature rise">
             <span class="tile"><svg class="line"><use href="#i-wallet" /></svg></span>
             <h3>Finanse</h3>
             <p>
-              Budżet miesiąca, akcje i inny majątek z aktualnymi cenami, cele oszczędnościowe oraz
-              wydatki dzielone ze znajomymi.
+              Budżet miesiąca, akcje i inny majątek z aktualnymi cenami, cele
+              oszczędnościowe oraz wydatki dzielone ze znajomymi.
             </p>
           </article>
           <article class="card lift feature rise" style="--after: 0.06s">
             <span class="tile"><svg class="line"><use href="#i-pen" /></svg></span>
             <h3>Tablice</h3>
             <p>
-              Szkicuj, pisz i przyklejaj karteczki na tablicy bez krawędzi, samodzielnie albo z
-              innymi.
+              Szkicuj, pisz i przyklejaj karteczki na tablicy bez krawędzi,
+              samodzielnie albo z innymi.
+            </p>
+          </article>
+          <article class="card lift feature rise" style="--after: 0.12s">
+            <span class="tile"><svg class="line"><use href="#i-table" /></svg></span>
+            <h3>Arkusze</h3>
+            <p>
+              Komórki z wartościami, formułami i około setką funkcji, udostępniane jak
+              wszystko inne. Komórkę może nawet wyliczać kilka linijek kodu.
+            </p>
+          </article>
+          <article class="card lift feature rise">
+            <span class="tile"><svg class="line"><use href="#i-spark" /></svg></span>
+            <h3>ReefAI</h3>
+            <p>
+              Asystent, który zagląda do kalendarza, zadań, stron i arkuszy i dopisuje
+              do nich, gdy na to pozwolisz. Działa na Twoim własnym kluczu od Google,
+              Anthropic lub OpenAI.
+            </p>
+          </article>
+          <article class="card lift feature rise" style="--after: 0.06s">
+            <span class="tile"><svg class="line"><use href="#i-chat" /></svg></span>
+            <h3>Czat</h3>
+            <p>
+              Każda organizacja ma czat: kanały dla wszystkich albo dla wybranych osób
+              i prywatne wiadomości między dwiema osobami. Znak @ wskazuje stronę,
+              wydarzenie lub zadanie.
             </p>
           </article>
           <article class="card lift feature rise" style="--after: 0.12s">
             <span class="tile"><svg class="line"><use href="#i-users" /></svg></span>
             <h3>Organizacje</h3>
             <p>
-              Wspólne miejsce dla rodziny, zespołu lub firmy. To Ty wybierasz, kto może zmieniać,
-              a kto tylko oglądać.
+              Wspólne miejsce dla rodziny, zespołu lub firmy, z wydziałami. To Ty
+              wybierasz, część po części, kto może zmieniać, kto tylko oglądać, a kto
+              nie widzi nic.
             </p>
           </article>
         </div>
@@ -470,17 +596,20 @@
               <li>Podstrony tak głęboko, jak potrzebujesz</li>
               <li>Eksport i import w Markdownie</li>
               <li>Czytanie na telefonie i powiększanie dwoma palcami</li>
+              <li>Obrazy i pliki trzymane razem ze stroną</li>
             </ul>
           </div>
           <div class="screens">
             <figure class="screen">
-              <img
-                src="shots/graph-pl.webp"
-                alt="Graf: cztery przestrzenie i ich strony połączone liniami"
-                width="720"
-                height="1280"
-                loading="lazy"
-              />
+              <span class="glass">
+                <img
+                  src="shots/graph-pl.webp"
+                  alt="Graf: cztery przestrzenie i ich strony połączone liniami"
+                  width="720"
+                  height="1280"
+                  loading="lazy"
+                />
+              </span>
             </figure>
           </div>
         </div>
@@ -494,6 +623,7 @@
             </p>
             <ul class="ticks">
               <li>Wydarzenia własne albo wspólne z przestrzenią</li>
+              <li>Wydarzenia, które wracają co tydzień, miesiąc lub rok</li>
               <li>Zadania, które przesuwasz od „do zrobienia” do „zrobione”</li>
               <li>Przypomnienia na Androidzie przed początkiem wydarzenia</li>
               <li>Ekran Start, który pokazuje, co nadchodzi, ułożony po Twojemu</li>
@@ -501,22 +631,26 @@
           </div>
           <div class="screens">
             <figure class="screen">
-              <img
-                src="shots/calendar-pl.webp"
-                alt="Kalendarz: miesiąc i wydarzenia wybranego dnia"
-                width="720"
-                height="1280"
-                loading="lazy"
-              />
+              <span class="glass">
+                <img
+                  src="shots/calendar-pl.webp"
+                  alt="Kalendarz: miesiąc i wydarzenia wybranego dnia"
+                  width="720"
+                  height="1280"
+                  loading="lazy"
+                />
+              </span>
             </figure>
             <figure class="screen">
-              <img
-                src="shots/tasks-pl.webp"
-                alt="Zadania: lista tego, co jest do zrobienia"
-                width="720"
-                height="1280"
-                loading="lazy"
-              />
+              <span class="glass">
+                <img
+                  src="shots/tasks-pl.webp"
+                  alt="Zadania: lista tego, co jest do zrobienia"
+                  width="720"
+                  height="1280"
+                  loading="lazy"
+                />
+              </span>
             </figure>
           </div>
         </div>
@@ -537,15 +671,34 @@
           </div>
           <div class="screens">
             <figure class="screen">
-              <img
-                src="shots/finance-pl.webp"
-                alt="Budżet: przychody, wydatki i wykres wydatków w miesiącu"
-                width="720"
-                height="1280"
-                loading="lazy"
-              />
+              <span class="glass">
+                <img
+                  src="shots/finance-pl.webp"
+                  alt="Budżet: przychody, wydatki i wykres wydatków w miesiącu"
+                  width="720"
+                  height="1280"
+                  loading="lazy"
+                />
+              </span>
             </figure>
           </div>
+        </div>
+
+        <div class="card show turned rise">
+          <div class="words">
+            <p class="eyebrow">Organizacje</p>
+            <h2>Zrobione do pracy razem</h2>
+            <p class="say">
+              Organizacja ma własny Start, kalendarz, zadania, finanse i przestrzenie,
+              osobno od prywatnych rzeczy każdej osoby.
+            </p>
+          </div>
+          <ul class="ticks">
+            <li>Czat z kanałami i prywatnymi wiadomościami</li>
+            <li>Wydziały i zadania, które mają wykonać</li>
+            <li>Uprawnienia do każdej części, przestrzeni i kanału</li>
+            <li>Tylko te sekcje, których potrzebuje Twój zespół</li>
+          </ul>
         </div>
       </section>
 
@@ -633,13 +786,13 @@
           </p>
           <div class="actions">
             <a
-              class="btn large"
+              class="btn large win"
               href="https://github.com/patbargg/notereef-releases/releases/latest"
             >
               <svg class="line"><use href="#i-windows" /></svg>Für Windows herunterladen
             </a>
-            <a class="btn large soft" href="#funktionen">
-              Sieh, was drin ist<svg class="line"><use href="#i-down" /></svg>
+            <a class="btn large soft web" href="app/">
+              <svg class="line"><use href="#i-globe" /></svg>Im Browser öffnen
             </a>
           </div>
           <p class="note">
@@ -648,13 +801,19 @@
         </div>
         <div class="phones rise" style="--after: 0.15s" aria-hidden="true">
           <figure class="phone">
-            <img src="shots/calendar-en.webp" alt="" width="720" height="1280" loading="lazy" />
+            <span class="glass">
+              <img src="shots/calendar-en.webp" alt="" width="720" height="1280" loading="lazy" />
+            </span>
           </figure>
           <figure class="phone">
-            <img src="shots/finance-en.webp" alt="" width="720" height="1280" loading="lazy" />
+            <span class="glass">
+              <img src="shots/finance-en.webp" alt="" width="720" height="1280" loading="lazy" />
+            </span>
           </figure>
           <figure class="phone">
-            <img src="shots/home-en.webp" alt="" width="720" height="1280" loading="lazy" />
+            <span class="glass">
+              <img src="shots/home-en.webp" alt="" width="720" height="1280" loading="lazy" />
+            </span>
           </figure>
         </div>
       </div>
@@ -670,48 +829,80 @@
             <span class="tile"><svg class="line"><use href="#i-page" /></svg></span>
             <h3>Seiten</h3>
             <p>
-              Schreibe in Arbeitsbereichen, allein oder gemeinsam in Echtzeit, mit dem Cursor jeder
-              Person auf der Seite. Verknüpfe Seiten mit @ und sieh sie als Graph.
+              Schreibe in Arbeitsbereichen, allein oder gemeinsam in Echtzeit, mit dem
+              Cursor jeder Person auf der Seite. Füge Bilder und Dateien hinzu,
+              verknüpfe Seiten mit @ und sieh sie als Graph.
             </p>
           </article>
           <article class="card lift feature rise" style="--after: 0.06s">
             <span class="tile"><svg class="line"><use href="#i-calendar" /></svg></span>
             <h3>Kalender</h3>
             <p>
-              Deine Tage und was in ihnen geplant ist, nur für dich oder mit einem Arbeitsbereich
-              geteilt. Ein Stundenplan lässt sich aus einem Screenshot einlesen.
+              Deine Tage und was in ihnen geplant ist, nur für dich oder mit einem
+              Arbeitsbereich geteilt. Termine können jede Woche, jeden Monat oder
+              jedes Jahr wiederkehren, und ein Stundenplan lässt sich aus einem
+              Screenshot einlesen.
             </p>
           </article>
           <article class="card lift feature rise" style="--after: 0.12s">
             <span class="tile"><svg class="line"><use href="#i-check" /></svg></span>
             <h3>Aufgaben</h3>
             <p>
-              Ein Board mit drei Spalten: zu erledigen, in Arbeit und erledigt. Mit Fristen und mit
-              Erinnerungen auf deinem Handy.
+              Ein Board mit drei Spalten: zu erledigen, in Arbeit und erledigt. Mit
+              Fristen, Erinnerungen auf deinem Handy und, in einer Organisation, der
+              Abteilung, für die eine Aufgabe gedacht ist.
             </p>
           </article>
           <article class="card lift feature rise">
             <span class="tile"><svg class="line"><use href="#i-wallet" /></svg></span>
             <h3>Finanzen</h3>
             <p>
-              Ein Monatsbudget, Aktien und anderes Vermögen mit aktuellen Kursen, Sparziele und
-              Ausgaben, die du mit Freunden teilst.
+              Ein Monatsbudget, Aktien und anderes Vermögen mit aktuellen Kursen,
+              Sparziele und Ausgaben, die du mit Freunden teilst.
             </p>
           </article>
           <article class="card lift feature rise" style="--after: 0.06s">
             <span class="tile"><svg class="line"><use href="#i-pen" /></svg></span>
             <h3>Whiteboards</h3>
             <p>
-              Skizziere, schreibe und klebe Notizen auf ein Board ohne Ränder, allein oder mit
-              anderen.
+              Skizziere, schreibe und klebe Notizen auf ein Board ohne Ränder, allein
+              oder mit anderen.
+            </p>
+          </article>
+          <article class="card lift feature rise" style="--after: 0.12s">
+            <span class="tile"><svg class="line"><use href="#i-table" /></svg></span>
+            <h3>Tabellen</h3>
+            <p>
+              Zellen mit Werten, Formeln und rund hundert Funktionen, geteilt wie
+              alles andere. Eine Zelle kann sogar von ein paar Zeilen Code berechnet
+              werden.
+            </p>
+          </article>
+          <article class="card lift feature rise">
+            <span class="tile"><svg class="line"><use href="#i-spark" /></svg></span>
+            <h3>ReefAI</h3>
+            <p>
+              Ein Assistent, der in deinen Kalender, deine Aufgaben, Seiten und
+              Tabellen schaut und etwas hinzufügt, sobald du es erlaubst. Er läuft mit
+              deinem eigenen Schlüssel von Google, Anthropic oder OpenAI.
+            </p>
+          </article>
+          <article class="card lift feature rise" style="--after: 0.06s">
+            <span class="tile"><svg class="line"><use href="#i-chat" /></svg></span>
+            <h3>Chat</h3>
+            <p>
+              Jede Organisation hat einen Chat: Kanäle für alle oder für ausgewählte
+              Personen und private Nachrichten zwischen zweien. Ein @ zeigt auf eine
+              Seite, einen Termin oder eine Aufgabe.
             </p>
           </article>
           <article class="card lift feature rise" style="--after: 0.12s">
             <span class="tile"><svg class="line"><use href="#i-users" /></svg></span>
             <h3>Organisationen</h3>
             <p>
-              Ein gemeinsamer Ort für eine Familie, ein Team oder eine Firma. Du bestimmst, wer
-              etwas ändern und wer nur zusehen darf.
+              Ein gemeinsamer Ort für eine Familie, ein Team oder eine Firma, mit
+              Abteilungen. Du bestimmst Bereich für Bereich, wer etwas ändern darf,
+              wer nur zusehen darf und wer nichts sieht.
             </p>
           </article>
         </div>
@@ -731,17 +922,20 @@
               <li>Unterseiten, so tief du sie brauchst</li>
               <li>Hinein und hinaus als Markdown</li>
               <li>Auf dem Handy gelesen und mit zwei Fingern vergrößert</li>
+              <li>Bilder und Dateien, bei der Seite aufbewahrt</li>
             </ul>
           </div>
           <div class="screens">
             <figure class="screen">
-              <img
-                src="shots/graph-en.webp"
-                alt="Der Graph: vier Arbeitsbereiche und ihre Seiten, durch Linien verbunden"
-                width="720"
-                height="1280"
-                loading="lazy"
-              />
+              <span class="glass">
+                <img
+                  src="shots/graph-en.webp"
+                  alt="Der Graph: vier Arbeitsbereiche und ihre Seiten, durch Linien verbunden"
+                  width="720"
+                  height="1280"
+                  loading="lazy"
+                />
+              </span>
             </figure>
           </div>
         </div>
@@ -756,6 +950,7 @@
             </p>
             <ul class="ticks">
               <li>Eigene Termine oder mit einem Arbeitsbereich geteilte</li>
+              <li>Termine, die jede Woche, jeden Monat oder jedes Jahr wiederkehren</li>
               <li>Aufgaben, die du von „zu erledigen“ nach „erledigt“ schiebst</li>
               <li>Erinnerungen auf Android, bevor ein Termin beginnt</li>
               <li>Ein Start, der zeigt, was ansteht, so angeordnet, wie du es magst</li>
@@ -763,22 +958,26 @@
           </div>
           <div class="screens">
             <figure class="screen">
-              <img
-                src="shots/calendar-en.webp"
-                alt="Der Kalender: ein Monat und die Termine des gewählten Tages"
-                width="720"
-                height="1280"
-                loading="lazy"
-              />
+              <span class="glass">
+                <img
+                  src="shots/calendar-en.webp"
+                  alt="Der Kalender: ein Monat und die Termine des gewählten Tages"
+                  width="720"
+                  height="1280"
+                  loading="lazy"
+                />
+              </span>
             </figure>
             <figure class="screen">
-              <img
-                src="shots/tasks-en.webp"
-                alt="Die Aufgaben: eine Liste dessen, was zu tun ist"
-                width="720"
-                height="1280"
-                loading="lazy"
-              />
+              <span class="glass">
+                <img
+                  src="shots/tasks-en.webp"
+                  alt="Die Aufgaben: eine Liste dessen, was zu tun ist"
+                  width="720"
+                  height="1280"
+                  loading="lazy"
+                />
+              </span>
             </figure>
           </div>
         </div>
@@ -799,15 +998,35 @@
           </div>
           <div class="screens">
             <figure class="screen">
-              <img
-                src="shots/finance-en.webp"
-                alt="Das Budget: Einnahmen, Ausgaben und ein Diagramm der Ausgaben des Monats"
-                width="720"
-                height="1280"
-                loading="lazy"
-              />
+              <span class="glass">
+                <img
+                  src="shots/finance-en.webp"
+                  alt="Das Budget: Einnahmen, Ausgaben und ein Diagramm der Ausgaben des Monats"
+                  width="720"
+                  height="1280"
+                  loading="lazy"
+                />
+              </span>
             </figure>
           </div>
+        </div>
+
+        <div class="card show turned rise">
+          <div class="words">
+            <p class="eyebrow">Organisationen</p>
+            <h2>Gemacht für die Arbeit im Team</h2>
+            <p class="say">
+              Eine Organisation hat einen eigenen Start, einen eigenen Kalender,
+              eigene Aufgaben, Finanzen und Arbeitsbereiche, getrennt von den privaten
+              Dingen jeder Person.
+            </p>
+          </div>
+          <ul class="ticks">
+            <li>Ein Chat mit Kanälen und privaten Nachrichten</li>
+            <li>Abteilungen und Aufgaben, die sie zu erledigen haben</li>
+            <li>Berechtigungen für jeden Bereich, Arbeitsbereich und Kanal</li>
+            <li>Nur die Bereiche, die dein Team braucht</li>
+          </ul>
         </div>
       </section>
 
@@ -896,26 +1115,32 @@
           </p>
           <div class="actions">
             <a
-              class="btn large"
+              class="btn large win"
               href="https://github.com/patbargg/notereef-releases/releases/latest"
             >
               <svg class="line"><use href="#i-windows" /></svg>Descargar para Windows
             </a>
-            <a class="btn large soft" href="#funciones">
-              Mira lo que hay dentro<svg class="line"><use href="#i-down" /></svg>
+            <a class="btn large soft web" href="app/">
+              <svg class="line"><use href="#i-globe" /></svg>Abrir en el navegador
             </a>
           </div>
           <p class="note">Sin anuncios ni rastreo. En español, inglés, polaco y alemán.</p>
         </div>
         <div class="phones rise" style="--after: 0.15s" aria-hidden="true">
           <figure class="phone">
-            <img src="shots/calendar-en.webp" alt="" width="720" height="1280" loading="lazy" />
+            <span class="glass">
+              <img src="shots/calendar-en.webp" alt="" width="720" height="1280" loading="lazy" />
+            </span>
           </figure>
           <figure class="phone">
-            <img src="shots/finance-en.webp" alt="" width="720" height="1280" loading="lazy" />
+            <span class="glass">
+              <img src="shots/finance-en.webp" alt="" width="720" height="1280" loading="lazy" />
+            </span>
           </figure>
           <figure class="phone">
-            <img src="shots/home-en.webp" alt="" width="720" height="1280" loading="lazy" />
+            <span class="glass">
+              <img src="shots/home-en.webp" alt="" width="720" height="1280" loading="lazy" />
+            </span>
           </figure>
         </div>
       </div>
@@ -931,15 +1156,17 @@
             <span class="tile"><svg class="line"><use href="#i-page" /></svg></span>
             <h3>Páginas</h3>
             <p>
-              Escribe en espacios, a solas o en directo con otras personas, con el cursor de cada
-              una en la página. Enlaza páginas con @ y míralas como un grafo.
+              Escribe en espacios, a solas o en directo con otras personas, con el
+              cursor de cada una en la página. Añade imágenes y archivos, enlaza
+              páginas con @ y míralas como un grafo.
             </p>
           </article>
           <article class="card lift feature rise" style="--after: 0.06s">
             <span class="tile"><svg class="line"><use href="#i-calendar" /></svg></span>
             <h3>Calendario</h3>
             <p>
-              Tus días y lo que hay planeado en ellos, solo para ti o compartido con un espacio. Un
+              Tus días y lo que hay planeado en ellos, solo para ti o compartido con
+              un espacio. Los eventos pueden repetirse cada semana, mes o año, y un
               horario se puede leer de una captura de pantalla.
             </p>
           </article>
@@ -947,31 +1174,61 @@
             <span class="tile"><svg class="line"><use href="#i-check" /></svg></span>
             <h3>Tareas</h3>
             <p>
-              Un tablero de tres columnas: por hacer, en curso y hechas. Con fechas límite y con
-              recordatorios en tu teléfono.
+              Un tablero de tres columnas: por hacer, en curso y hechas. Con fechas
+              límite, recordatorios en tu teléfono y, en una organización, el
+              departamento al que va la tarea.
             </p>
           </article>
           <article class="card lift feature rise">
             <span class="tile"><svg class="line"><use href="#i-wallet" /></svg></span>
             <h3>Finanzas</h3>
             <p>
-              Un presupuesto mensual, acciones y otros bienes con precios actuales, metas de ahorro
-              y gastos compartidos con amigos.
+              Un presupuesto mensual, acciones y otros bienes con precios actuales,
+              metas de ahorro y gastos compartidos con amigos.
             </p>
           </article>
           <article class="card lift feature rise" style="--after: 0.06s">
             <span class="tile"><svg class="line"><use href="#i-pen" /></svg></span>
             <h3>Pizarras</h3>
             <p>
-              Dibuja, escribe y pega notas en una pizarra sin bordes, a solas o con otras personas.
+              Dibuja, escribe y pega notas en una pizarra sin bordes, a solas o con
+              otras personas.
+            </p>
+          </article>
+          <article class="card lift feature rise" style="--after: 0.12s">
+            <span class="tile"><svg class="line"><use href="#i-table" /></svg></span>
+            <h3>Hojas de cálculo</h3>
+            <p>
+              Celdas con valores, fórmulas y cerca de cien funciones, compartidas como
+              todo lo demás. Una celda incluso puede calcularse con unas líneas de
+              código.
+            </p>
+          </article>
+          <article class="card lift feature rise">
+            <span class="tile"><svg class="line"><use href="#i-spark" /></svg></span>
+            <h3>ReefAI</h3>
+            <p>
+              Un asistente que mira tu calendario, tus tareas, páginas y hojas de
+              cálculo y añade cosas cuando se lo permites. Funciona con tu propia
+              clave de Google, Anthropic u OpenAI.
+            </p>
+          </article>
+          <article class="card lift feature rise" style="--after: 0.06s">
+            <span class="tile"><svg class="line"><use href="#i-chat" /></svg></span>
+            <h3>Chat</h3>
+            <p>
+              Cada organización tiene un chat: canales para todos o para personas
+              elegidas y mensajes privados entre dos. Una @ señala una página, un
+              evento o una tarea.
             </p>
           </article>
           <article class="card lift feature rise" style="--after: 0.12s">
             <span class="tile"><svg class="line"><use href="#i-users" /></svg></span>
             <h3>Organizaciones</h3>
             <p>
-              Un lugar compartido para una familia, un equipo o una empresa. Tú eliges quién puede
-              cambiar las cosas y quién solo puede mirar.
+              Un lugar compartido para una familia, un equipo o una empresa, con
+              departamentos. Tú eliges, parte por parte, quién puede cambiar las
+              cosas, quién solo puede mirar y quién no ve nada.
             </p>
           </article>
         </div>
@@ -991,17 +1248,20 @@
               <li>Subpáginas tan profundas como necesites</li>
               <li>Entran y salen como Markdown</li>
               <li>Se leen en el teléfono y se amplían con dos dedos</li>
+              <li>Imágenes y archivos guardados con la página</li>
             </ul>
           </div>
           <div class="screens">
             <figure class="screen">
-              <img
-                src="shots/graph-en.webp"
-                alt="El grafo: cuatro espacios y sus páginas, unidos por líneas"
-                width="720"
-                height="1280"
-                loading="lazy"
-              />
+              <span class="glass">
+                <img
+                  src="shots/graph-en.webp"
+                  alt="El grafo: cuatro espacios y sus páginas, unidos por líneas"
+                  width="720"
+                  height="1280"
+                  loading="lazy"
+                />
+              </span>
             </figure>
           </div>
         </div>
@@ -1015,6 +1275,7 @@
             </p>
             <ul class="ticks">
               <li>Eventos propios o compartidos con un espacio</li>
+              <li>Eventos que se repiten cada semana, mes o año</li>
               <li>Tareas que mueves de «por hacer» a «hechas»</li>
               <li>Recordatorios en Android antes de que empiece un evento</li>
               <li>Un Inicio que muestra lo que viene, ordenado a tu manera</li>
@@ -1022,22 +1283,26 @@
           </div>
           <div class="screens">
             <figure class="screen">
-              <img
-                src="shots/calendar-en.webp"
-                alt="El calendario: un mes y los eventos del día elegido"
-                width="720"
-                height="1280"
-                loading="lazy"
-              />
+              <span class="glass">
+                <img
+                  src="shots/calendar-en.webp"
+                  alt="El calendario: un mes y los eventos del día elegido"
+                  width="720"
+                  height="1280"
+                  loading="lazy"
+                />
+              </span>
             </figure>
             <figure class="screen">
-              <img
-                src="shots/tasks-en.webp"
-                alt="Las tareas: una lista de lo que hay por hacer"
-                width="720"
-                height="1280"
-                loading="lazy"
-              />
+              <span class="glass">
+                <img
+                  src="shots/tasks-en.webp"
+                  alt="Las tareas: una lista de lo que hay por hacer"
+                  width="720"
+                  height="1280"
+                  loading="lazy"
+                />
+              </span>
             </figure>
           </div>
         </div>
@@ -1058,15 +1323,34 @@
           </div>
           <div class="screens">
             <figure class="screen">
-              <img
-                src="shots/finance-en.webp"
-                alt="El presupuesto: ingresos, gastos y un gráfico del gasto del mes"
-                width="720"
-                height="1280"
-                loading="lazy"
-              />
+              <span class="glass">
+                <img
+                  src="shots/finance-en.webp"
+                  alt="El presupuesto: ingresos, gastos y un gráfico del gasto del mes"
+                  width="720"
+                  height="1280"
+                  loading="lazy"
+                />
+              </span>
             </figure>
           </div>
+        </div>
+
+        <div class="card show turned rise">
+          <div class="words">
+            <p class="eyebrow">Organizaciones</p>
+            <h2>Hecho para trabajar en equipo</h2>
+            <p class="say">
+              Una organización tiene su propio Inicio, calendario, tareas, finanzas y
+              espacios, aparte de las cosas privadas de cada persona.
+            </p>
+          </div>
+          <ul class="ticks">
+            <li>Un chat con canales y mensajes privados</li>
+            <li>Departamentos y tareas que les tocan</li>
+            <li>Permisos para cada parte, espacio y canal</li>
+            <li>Solo las secciones que tu equipo necesita</li>
+          </ul>
         </div>
       </section>
 
