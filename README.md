@@ -15,8 +15,8 @@
 <br />
 
 <img src="shots/home-en.webp" width="190" alt="Home" />&nbsp;
-<img src="shots/calendar-en.webp" width="190" alt="Calendar" />&nbsp;
-<img src="shots/tasks-en.webp" width="190" alt="Tasks" />&nbsp;
+<img src="shots/page-en.webp" width="190" alt="A page" />&nbsp;
+<img src="shots/chat-en.webp" width="190" alt="Chat" />&nbsp;
 <img src="shots/finance-en.webp" width="190" alt="Finance" />
 
 </div>
